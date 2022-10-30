@@ -1,25 +1,26 @@
 package com.example.Authentication.Tables;
 
-import org.hibernate.annotations.Tables;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user",schema =  "public")
 public class User {
     @Id
-    private String Names;
+    @Column(name = "names")
+    private String names;
+
     private Integer password;
     public User() {}
 
     public String getNames() {
-        return Names;
+        return names;
     }
 
     public void setNames(String names) {
-        Names = names;
+        this.names = names;
     }
 
     public Integer getPassword() {
